@@ -43,20 +43,26 @@ public class Utilisateur {
 		}
 			
 			   
+			  	
+		System.out.println("si vous voullez activer cliquez oui sinon cliquez non");
+		Scanner sc = new Scanner(System.in);
+		String reponse = sc.nextLine();	   
 			  
+		if(reponse.equals("oui")) {	   
+			
 			   
 			
 			for(int i=0;i<addConnect.size();i++) {
 				String name=addConnect.get(i).getClass().getName();
 		
 				    if(name.equals("Exo3.Radio")) {
-				    	 radio.setDescription("Radio demar�");
+				    	 radio.setDescription("Radio demaré");
 				    	
 				    	ConcretObserver concret = new ConcretObserver(radio);
 					   concret.demarer();
 				    	
 				    }else if(name.equals("Exo3.Cafetiere")) {
-				    	 cafetiere.setDescription("Cafetiere demmar�");
+				    	 cafetiere.setDescription("Cafetiere demmaré");
 				    
 				   
 				    ConcretObserver concret = new ConcretObserver(cafetiere);
@@ -67,21 +73,21 @@ public class Utilisateur {
 			}
 				 
 					}
+		}else if(reponse.equals("non")){
 			   for(int i=0;i<addConnect.size();i++) {
 					String name=addConnect.get(i).getClass().getName();
 			
 					    if(name.equals("Exo3.Radio")) {
 					    	 radio.setDescription("Radio desactiver");
-					    	
-					    	ConcretObserver concret = new ConcretObserver(radio);
-						   concret.desactiver();
+					         ConcretObserver concret = new ConcretObserver(radio);
+						 concret.desactiver();
+						  System.out.println("Radio supprimé des objets deconnctés");
 					    	
 					    }else if(name.equals("Exo3.Cafetiere")) {
 					    	 cafetiere.setDescription("Cafetiere desactiver");
-					    
-					   
-					    ConcretObserver concret = new ConcretObserver(cafetiere);
-					    concret.desactiver();
+					         ConcretObserver concret = new ConcretObserver(cafetiere);
+					         concret.desactiver();
+						 System.out.println("Cafetiere supprimé des objets deconnctés");
 					    
 					
 				}
@@ -89,6 +95,7 @@ public class Utilisateur {
 	
 	}
 
+	}
 	}
 }
 
